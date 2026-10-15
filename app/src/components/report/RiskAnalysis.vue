@@ -1,0 +1,3 @@
+<template><el-row :gutter="16"><el-col v-for="item in risks" :key="item.title" :span="8"><el-card shadow="hover" class="risk" :class="`level-${item.level}`"><div class="title"><el-tag :type="item.level==='高'?'danger':item.level==='中'?'warning':'info'">{{ item.level }}风险</el-tag><strong>{{ item.title }}</strong></div><p>{{ item.description }}</p></el-card></el-col></el-row></template>
+<script setup>defineProps({risks:{type:Array,default:()=>[]}});</script>
+<style scoped>.risk{height:150px;border-left:4px solid #909399}.level-中{border-left-color:#e6a23c}.level-高{border-left-color:#f56c6c}.title{display:flex;align-items:center;gap:10px}.risk p{color:#606266;line-height:1.7}</style>

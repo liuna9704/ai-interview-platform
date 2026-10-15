@@ -1,0 +1,3 @@
+<template><el-row :gutter="16"><el-col v-for="(item,index) in plans" :key="item.category" :span="8"><el-card shadow="hover" class="plan"><div class="index">{{ index+1 }}</div><h3>{{ item.category }}</h3><p>{{ item.action }}</p><el-button type="primary" link @click="$emit('train',item)">推荐训练：{{ item.resource }} →</el-button></el-card></el-col></el-row></template>
+<script setup>defineProps({plans:{type:Array,default:()=>[]}});defineEmits(["train"]);</script>
+<style scoped>.plan{height:210px;position:relative}.index{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ecf5ff;color:#409eff;font-weight:700}.plan h3{margin:12px 0}.plan p{height:62px;color:#606266;line-height:1.7}</style>
